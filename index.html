@@ -1,0 +1,2543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil que poucos conhecem — Conheça as culturas que formam o nosso país</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23009739'/><circle cx='50' cy='50' r='35' fill='%23FFDF00'/></svg>">
+    <style>
+        :root {
+            --color-primary: #009739;
+            --color-secondary: #FFDF00;
+            --color-accent-1: #E63946;
+            --color-accent-2: #457B9D;
+            --color-accent-3: #F4A261;
+            --color-accent-4: #2A9D8F;
+            --color-accent-5: #6B4C35;
+            --color-dark: #1a1a2e;
+            --color-dark-light: #2d2d44;
+            --color-text: #2d3436;
+            --color-text-light: #636e72;
+            --color-bg: #fafafa;
+            --color-white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 48px rgba(0,0,0,0.2);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--color-secondary);
+            color: var(--color-dark);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-accent-2);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(0, 151, 57, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 223, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(69, 123, 157, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(244, 162, 97, 0.03) 0%, transparent 50%);
+            animation: bgShift 30s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-5%, -5%) rotate(3deg); }
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .float-element {
+            position: absolute;
+            opacity: 0.04;
+            font-size: 80px;
+            animation: floatAround 20s ease-in-out infinite;
+        }
+
+        .float-element:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .float-element:nth-child(2) { top: 20%; right: 10%; animation-delay: -3s; font-size: 60px; }
+        .float-element:nth-child(3) { bottom: 30%; left: 15%; animation-delay: -6s; font-size: 100px; }
+        .float-element:nth-child(4) { top: 50%; right: 20%; animation-delay: -9s; font-size: 70px; }
+        .float-element:nth-child(5) { bottom: 10%; right: 5%; animation-delay: -12s; font-size: 90px; }
+        .float-element:nth-child(6) { top: 60%; left: 80%; animation-delay: -15s; font-size: 50px; }
+
+        @keyframes floatAround {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(10px) rotate(-3deg); }
+            75% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.7rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+
+        .nav-logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--color-dark);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-light) 50%, var(--color-dark) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(0, 151, 57, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255, 223, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(69, 123, 157, 0.1) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 223, 0, 0.15);
+            border: 1px solid rgba(255, 223, 0, 0.3);
+            border-radius: 50px;
+            color: var(--color-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--color-secondary), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), #00B84A);
+            color: var(--color-white);
+            box-shadow: 0 4px 15px rgba(0, 151, 57, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 151, 57, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--color-accent-3), #E8965A);
+            color: var(--color-white);
+            box-shadow: 0 4px 15px rgba(244, 162, 97, 0.4);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(244, 162, 97, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.25rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 151, 57, 0.1);
+            color: var(--color-primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cultures Section */
+        .cultures-section {
+            background: var(--color-white);
+        }
+
+        .cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .culture-card {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .culture-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .culture-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .culture-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .culture-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-dark);
+        }
+
+        .culture-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .culture-card-curiosity {
+            background: rgba(69, 123, 157, 0.08);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            color: var(--color-accent-2);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--color-accent-2);
+        }
+
+        .culture-card-curiosity strong {
+            color: var(--color-dark);
+        }
+
+        .culture-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.25rem;
+            background: var(--color-dark);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .culture-card-btn:hover {
+            background: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        /* Featured Cultures Section */
+        .featured-section {
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-white) 100%);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-card-header {
+            padding: 2rem;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
+        }
+
+        .featured-card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-card-header h3 {
+            font-size: 1.5rem;
+            color: var(--color-white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-card-body {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .featured-card-body p {
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .detail-icon {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            margin-top: 0.15rem;
+        }
+
+        .detail-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        .detail-text strong {
+            display: block;
+            color: var(--color-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        /* Manifestations Section */
+        .manifestations-section {
+            background: var(--color-dark);
+            color: var(--color-white);
+        }
+
+        .manifestations-section .section-tag {
+            background: rgba(255, 223, 0, 0.15);
+            color: var(--color-secondary);
+        }
+
+        .manifestations-section .section-title {
+            color: var(--color-white);
+        }
+
+        .manifestations-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .manifestations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .manifestation-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifestation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 223, 0, 0.1), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .manifestation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-secondary);
+            box-shadow: 0 8px 25px rgba(255, 223, 0, 0.15);
+        }
+
+        .manifestation-card:hover::before {
+            opacity: 1;
+        }
+
+        .manifestation-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .manifestation-card h4 {
+            font-size: 1.1rem;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .manifestation-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .manifestation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .manifestation-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            max-width: 500px;
+            width: 100%;
+            padding: 2.5rem;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--color-bg);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--color-accent-1);
+            color: var(--color-white);
+        }
+
+        .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .modal-content .modal-icon {
+            font-size: 1.75rem;
+        }
+
+        .modal-content p {
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-content .modal-region {
+            display: inline-block;
+            padding: 0.3rem 0.75rem;
+            background: rgba(0, 151, 57, 0.1);
+            color: var(--color-primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Food Section */
+        .food-section {
+            background: var(--color-white);
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .food-card {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .food-card-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(180deg, transparent, var(--color-bg));
+        }
+
+        .food-card-body {
+            padding: 1.5rem;
+        }
+
+        .food-card-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .food-card-body .food-origin {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(244, 162, 97, 0.15);
+            color: var(--color-accent-3);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .food-card-body p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Why Section */
+        .why-section {
+            background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-white) 100%);
+        }
+
+        .why-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .why-factors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .why-factor {
+            background: var(--color-white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .why-factor:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .why-factor-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .why-factor h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-factor p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* Actions Section */
+        .actions-section {
+            background: var(--color-dark);
+            color: var(--color-white);
+        }
+
+        .actions-section .section-tag {
+            background: rgba(255, 223, 0, 0.15);
+            color: var(--color-secondary);
+        }
+
+        .actions-section .section-title {
+            color: var(--color-white);
+        }
+
+        .actions-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .action-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .action-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: var(--color-secondary);
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-card h4 {
+            font-size: 1.1rem;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .action-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        /* Discover Button Section */
+        .discover-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #00B84A 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .discover-section h2 {
+            color: var(--color-white);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        .discover-section p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+        }
+
+        .discover-btn {
+            padding: 1.25rem 2.5rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .discover-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .discover-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-md);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .discover-result.show {
+            display: block;
+        }
+
+        .discover-result h4 {
+            color: var(--color-white);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .discover-result p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Counter Section */
+        .counter-section {
+            background: var(--color-bg);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .counter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .counter-display {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--color-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .counter-icon {
+            font-size: 1.5rem;
+        }
+
+        .counter-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .counter-label {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        /* Final Message Section */
+        .final-section {
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-light) 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 151, 57, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 223, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .final-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-quote {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--color-white);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .final-quote span {
+            background: linear-gradient(135deg, var(--color-secondary), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .final-question {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: var(--color-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .final-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .final-buttons .btn-primary {
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            box-shadow: 0 4px 15px rgba(255, 223, 0, 0.4);
+        }
+
+        .final-buttons .btn-primary:hover {
+            box-shadow: 0 8px 25px rgba(255, 223, 0, 0.5);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--color-accent-1);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--color-primary);
+            margin: 0 auto 1.5rem;
+            border-radius: 3px;
+        }
+
+        .footer-bottom {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            section {
+                padding: 5rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--color-white);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                gap: 1.5rem;
+                box-shadow: var(--shadow-xl);
+                transition: var(--transition-slow);
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card-details {
+                grid-template-columns: 1fr;
+            }
+
+            .why-factors {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+
+            .navbar.scrolled {
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.25rem;
+            }
+
+            .nav-logo svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .manifestations-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .manifestation-card {
+                padding: 1.25rem 1rem;
+            }
+
+            .manifestation-icon {
+                font-size: 2rem;
+            }
+
+            .manifestation-card h4 {
+                font-size: 0.95rem;
+            }
+
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .counter-container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-pattern"></div>
+    <div class="floating-elements">
+        <span class="float-element">🌿</span>
+        <span class="float-element">🎵</span>
+        <span class="float-element">💃</span>
+        <span class="float-element">🎭</span>
+        <span class="float-element">🌺</span>
+        <span class="float-element">🥁</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" fill="#009739"/>
+                    <circle cx="20" cy="20" r="13" fill="#FFDF00"/>
+                    <circle cx="20" cy="20" r="8" fill="#009739"/>
+                </svg>
+                <span>Brasil Cultural</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" onclick="closeMenu()">Início</a></li>
+                <li><a href="#cultures" onclick="closeMenu()">Culturas</a></li>
+                <li><a href="#featured" onclick="closeMenu()">Em Destaque</a></li>
+                <li><a href="#manifestations" onclick="closeMenu()">Manifestações</a></li>
+                <li><a href="#food" onclick="closeMenu()">Sabores</a></li>
+                <li><a href="#why" onclick="closeMenu()">Por que?</a></li>
+                <li><a href="#actions" onclick="closeMenu()">O que fazer?</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Descubra o Brasil Real</div>
+            <h1>Você conhece o <span>Brasil de verdade</span>?</h1>
+            <p>O Brasil é muito mais do que aquilo que aparece nos livros, na televisão ou nas redes sociais. Existem histórias, tradições, povos, músicas, festas, comidas, artes e formas de viver que fazem parte da nossa identidade, mas que muitas vezes permanecem desconhecidas pela própria sociedade brasileira.</p>
+            <div class="hero-buttons">
+                <a href="#cultures" class="btn btn-primary">
+                    Começar a descobrir
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#featured" class="btn btn-secondary">
+                    Ver culturas em destaque
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Culturas principais</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Manifestações</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Histórias para descobrir</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultures Section -->
+    <section class="cultures-section" id="cultures">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Diversidade Cultural</span>
+                <h2 class="section-title">Um Brasil, muitas culturas</h2>
+                <p class="section-subtitle">Não existe apenas uma cultura brasileira. Nosso país é formado por diversas manifestações culturais que se desenvolveram ao longo de séculos, cada uma com sua própria história, tradições e identidade.</p>
+            </div>
+            <div class="cultures-grid">
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(0, 151, 57, 0.1);">🌿</div>
+                    <h3>Cultura Indígena</h3>
+                    <p>Povos originários que habitam o Brasil há milhares de anos, com línguas, cosmovisões e saberes únicos.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> Existem mais de 300 povos indígenas no Brasil, falando mais de 270 línguas diferentes.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('indigena')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(244, 162, 97, 0.15);">🥁</div>
+                    <h3>Cultura Afro-Brasileira</h3>
+                    <p>Herança fundamental da formação do Brasil, influenciando música, dança, culinária, religião e identidade nacional.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> O samba, o capoeira e a culinária brasileira têm raízes profundas na cultura africana.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('afro')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(69, 123, 157, 0.1);">🏘️</div>
+                    <h3>Cultura Quilombola</h3>
+                    <p>Comunidades formadas por descendentes de escravizados que resistiram e preservaram suas tradições e modos de vida.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> Existem mais de 2.000 comunidades quilombolas reconhecidas no Brasil hoje.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('quilombola')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(230, 57, 70, 0.1);">🤠</div>
+                    <h3>Cultura Sertaneja</h3>
+                    <p>Tradições do interior do Brasil, com música, modos de vida e valores próprios das comunidades do sertão e do interior.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> O música sertaneja é um dos gêneros mais ouvidos do Brasil, com raízes nas tradições do interior.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('sertaneja')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(255, 223, 0, 0.15);">☀️</div>
+                    <h3>Cultura Nordestina</h3>
+                    <p>Rica em tradições, com fortes influências africanas, indígenas e europeias, manifestadas na música, culinária e festas.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> O Nordeste tem algumas das festas populares mais tradicionais do Brasil, como o São João.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('nordestina')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(42, 157, 143, 0.1);">🌳</div>
+                    <h3>Cultura Amazônica</h3>
+                    <p>Povos e comunidades que vivem em harmonia com a maior floresta tropical do mundo, preservando conhecimentos ancestrais.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> A Amazônia brasileira abriga centenas de comunidades ribeirinhas, indígenas e extrativistas.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('amazonica')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(107, 76, 53, 0.1);">🛶</div>
+                    <h3>Cultura Ribeirinha</h3>
+                    <p>Comunidades que vivem às margens dos rios, com modos de vida profundamente conectados à água, pesca e natureza.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> Muitas comunidades ribeirinhas têm tradições de centenas de anos, transmitidas de geração em geração.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('ribeirinha')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(69, 123, 157, 0.1);">🌊</div>
+                    <h3>Cultura Caiçara</h3>
+                    <p>Comunidades tradicionais do litoral, com forte conexão ao mar, pesca artesanal e cultura única das costas brasileiras.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> Os caiçaras desenvolveram técnicas de pesca e navegação únicas ao longo de gerações.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('caiarra')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(244, 162, 97, 0.15);">🐃</div>
+                    <h3>Cultura Pantaneira</h3>
+                    <p>Tradições do Pantanal, com modos de vida ligados ao campo, à pecuária e à natureza única desse ecossistema.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> O Pantanal é o maior planalto alagável do mundo e abriga comunidades com tradições únicas.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('pantaneira')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(0, 151, 57, 0.1);">🏔️</div>
+                    <h3>Cultura Sulista</h3>
+                    <p>Tradições do sul do Brasil, com influências europeias, indígenas e próprias das comunidades do planalto e das serras.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> O sul do Brasil tem tradições culturais distintas, como a cultura gaúcha e as comunidades de imigrantes.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('sulista')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(230, 57, 70, 0.1);">🏡</div>
+                    <h3>Comunidades Tradicionais</h3>
+                    <p>Diversas comunidades que preservam modos de vida ancestrais, como ribeirinhos, ribeirinhas, extractivistas e outras.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> O Brasil reconhece oficialmente diversos tipos de comunidades tradicionais e seus direitos.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('tradicionais')">Conhecer →</button>
+                </div>
+
+                <div class="culture-card fade-in">
+                    <div class="culture-card-icon" style="background: rgba(42, 157, 143, 0.1);">🏙️</div>
+                    <h3>Periferias e Comunidades Urbanas</h3>
+                    <p>Culturas vibrantes que surgem nas periferias das grandes cidades, com expressões artísticas, musicais e sociais únicas.</p>
+                    <div class="culture-card-curiosity">
+                        <strong>Curiosidade:</strong> Muitas expressões culturais contemporâneas do Brasil, como o funk e o hip-hop, nascem nas periferias.
+                    </div>
+                    <button class="culture-card-btn" onclick="showCultureInfo('periferias')">Conhecer →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cultures Section -->
+    <section class="featured-section" id="featured">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Culturas em Destaque</span>
+                <h2 class="section-title">Culturas que precisam ser mais conhecidas</h2>
+                <p class="section-subtitle">Algumas culturas e tradições brasileiras recebem menos visibilidade na mídia e na sociedade. Conhecer essas realidades é um passo importante para valorizar a diversidade do nosso país.</p>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-card fade-in">
+                    <div class="featured-card-header" style="background: linear-gradient(135deg, #2A9D8F 0%, #457B9D 100%);">
+                        <div class="featured-card-icon" style="background: rgba(255,255,255,0.2);">🛶</div>
+                        <h3>Cultura Ribeirinha</h3>
+                    </div>
+                    <div class="featured-card-body">
+                        <p>As comunidades ribeirinhas vivem em harmonia com os rios há gerações. Sua relação com a água é central em todos os aspectos de suas vidas — da alimentação à mobilidade, das festas às crenças.</p>
+                        <div class="featured-card-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎣</span>
+                                <div class="detail-text">
+                                    <strong>Pesca Artesanal</strong>
+                                    Técnicas tradicionais de pesca passadas de geração em geração.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🛶</span>
+                                <div class="detail-text">
+                                    <strong>Barcos e Navegação</strong>
+                                    Conhecimento profundo dos rios e técnicas de construção de embarcações.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🍲</span>
+                                <div class="detail-text">
+                                    <strong>Alimentação</strong>
+                                    Pratos baseados em peixes e ingredientes da região.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌿</span>
+                                <div class="detail-text">
+                                    <strong>Modo de Vida</strong>
+                                    Harmonia com a natureza e respeito pelos ciclos da natureza.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card fade-in">
+                    <div class="featured-card-header" style="background: linear-gradient(135deg, #457B9D 0%, #1D3557 100%);">
+                        <div class="featured-card-icon" style="background: rgba(255,255,255,0.2);">🌊</div>
+                        <h3>Cultura Caiçara</h3>
+                    </div>
+                    <div class="featured-card-body">
+                        <p>As comunidades caiçaras são tradicionais habitantes do litoral brasileiro. Sua cultura é marcada pela relação com o mar, pela pesca artesanal e por uma culinária e tradições únicas.</p>
+                        <div class="featured-card-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎣</span>
+                                <div class="detail-text">
+                                    <strong>Pesca Artesanal</strong>
+                                    Métodos tradicionais de pesca sustentável no mar.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏖️</span>
+                                <div class="detail-text">
+                                    <strong>Relação com o Mar</strong>
+                                    Conexão profunda com o oceano e seus ciclos.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🍽️</span>
+                                <div class="detail-text">
+                                    <strong>Culinária</strong>
+                                    Pratos tradicionais com frutos do mar.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎉</span>
+                                <div class="detail-text">
+                                    <strong>Tradições</strong>
+                                    Festas e celebrações ligadas ao mar e à terra.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card fade-in">
+                    <div class="featured-card-header" style="background: linear-gradient(135deg, #E63946 0%, #9B2226 100%);">
+                        <div class="featured-card-icon" style="background: rgba(255,255,255,0.2);">🏘️</div>
+                        <h3>Cultura Quilombola</h3>
+                    </div>
+                    <div class="featured-card-body">
+                        <p>As comunidades quilombolas são descendentes de escravizados que buscaram liberdade e formaram suas próprias comunidades. Sua importância histórica e cultural para a formação do Brasil é fundamental.</p>
+                        <div class="featured-card-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📜</span>
+                                <div class="detail-text">
+                                    <strong>História</strong>
+                                    Resistência e luta pela liberdade durante e após a escravidão.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎶</span>
+                                <div class="detail-text">
+                                    <strong>Cultura</strong>
+                                    Música, dança, culinária e tradições próprias.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🤝</span>
+                                <div class="detail-text">
+                                    <strong>Comunidade</strong>
+                                    Forte senso de comunidade e solidariedade.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌱</span>
+                                <div class="detail-text">
+                                    <strong>Tradições</strong>
+                                    Saberes e práticas transmitidos por gerações.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card fade-in">
+                    <div class="featured-card-header" style="background: linear-gradient(135deg, #009739 0%, #00B84A 100%);">
+                        <div class="featured-card-icon" style="background: rgba(255,255,255,0.2);">🌿</div>
+                        <h3>Culturas Indígenas</h3>
+                    </div>
+                    <div class="featured-card-body">
+                        <p>O Brasil é habitado por centenas de povos indígenas, cada um com suas próprias línguas, costumes, conhecimentos e tradições. Essa diversidade é parte fundamental da identidade brasileira.</p>
+                        <div class="featured-card-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🗣️</span>
+                                <div class="detail-text">
+                                    <strong>Línguas</strong>
+                                    Mais de 270 línguas indígenas faladas no Brasil.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌳</span>
+                                <div class="detail-text">
+                                    <strong>Conhecimento</strong>
+                                    Saberes ancestrais sobre a natureza e os ecossistemas.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎨</span>
+                                <div class="detail-text">
+                                    <strong>Artes</strong>
+                                    Expressões artísticas únicas de cada povo.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🙏</span>
+                                <div class="detail-text">
+                                    <strong>Cosmovisão</strong>
+                                    Relação espiritual com a natureza e o cosmos.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card fade-in">
+                    <div class="featured-card-header" style="background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);">
+                        <div class="featured-card-icon" style="background: rgba(255,255,255,0.2);">🥁</div>
+                        <h3>Cultura Afro-Brasileira</h3>
+                    </div>
+                    <div class="featured-card-body">
+                        <p>A cultura afro-brasileira é uma das bases da identidade nacional. Sua influência está presente na música, dança, culinária, religião, arte, linguagem e em praticamente todos os aspectos da cultura brasileira.</p>
+                        <div class="featured-card-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎵</span>
+                                <div class="detail-text">
+                                    <strong>Música e Dança</strong>
+                                    Samba, capoeira, maracatu e outras manifestações.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🍲</span>
+                                <div class="detail-text">
+                                    <strong>Culinária</strong>
+                                    Ingredientes e técnicas que formam a comida brasileira.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🙏</span>
+                                <div class="detail-text">
+                                    <strong>Religião</strong>
+                                    Tradições religiosas como Candomblé e Umbanda.
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎨</span>
+                                <div class="detail-text">
+                                    <strong>Arte e Linguagem</strong>
+                                    Influência na arte, na língua e na identidade nacional.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifestations Section -->
+    <section class="manifestations-section" id="manifestations">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Manifestações Culturais</span>
+                <h2 class="section-title">Muito além do Carnaval</h2>
+                <p class="section-subtitle">A cultura brasileira possui diversas manifestações artísticas e culturais, muitas delas muito mais antigas e profundas do que as mais conhecidas. Descubra algumas dessas expressões únicas.</p>
+            </div>
+            <div class="manifestations-grid">
+                <div class="manifestation-card fade-in" onclick="openManifestation('maracatu')">
+                    <div class="manifestation-icon">🥁</div>
+                    <h4>Maracatu</h4>
+                    <p>Manifestação cultural do Nordeste, com raízes na cultura africana e indígena.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('jongo')">
+                    <div class="manifestation-icon">💃</div>
+                    <h4>Jongo</h4>
+                    <p>Expressão cultural de origem africana, com dança, música e poesia.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('carimbo')">
+                    <div class="manifestation-icon">🪕</div>
+                    <h4>Carimbó</h4>
+                    <p>Dança e música tradicional da região do Pará, com influências indígenas e africanas.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('frevo')">
+                    <div class="manifestation-icon">🎺</div>
+                    <h4>Frevo</h4>
+                    <p>Gênero musical e dança rápida típica do Nordeste, especialmente em Pernambuco.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('bumba')">
+                    <div class="manifestation-icon">🐂</div>
+                    <h4>Bumba meu boi</h4>
+                    <p>Festa popular com desfiles, música e dança, presente em várias regiões do Brasil.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('congada')">
+                    <div class="manifestation-icon">⛪</div>
+                    <h4>Congada</h4>
+                    <p>Manifestação de matriz africana com elementos católicos, presente em várias regiões.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('fandango')">
+                    <div class="manifestation-icon">🎸</div>
+                    <h4>Fandango</h4>
+                    <p>Expressão musical e dançante de origem portuguesa, adaptada e transformada no Brasil.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('ciranda')">
+                    <div class="manifestation-icon">🔄</div>
+                    <h4>Ciranda</h4>
+                    <p>Dança circular tradicional, especialmente presente no litoral e no Nordeste.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('catira')">
+                    <div class="manifestation-icon">💃</div>
+                    <h4>Catira</h4>
+                    <p>Dança tradicional do interior do Brasil, com raízes nas festas juninas.</p>
+                </div>
+                <div class="manifestation-card fade-in" onclick="openManifestation('folia')">
+                    <div class="manifestation-icon">🎄</div>
+                    <h4>Folia de Reis</h4>
+                    <p>Celebração tradicional do Natal e Epifania, com cantorias e desfiles por comunidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifestation Modal -->
+    <div class="manifestation-modal" id="manifestationModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeManifestation()">✕</button>
+            <h3 id="modalTitle"><span class="modal-icon" id="modalIcon"></span> <span id="modalName"></span></h3>
+            <span class="modal-region" id="modalRegion"></span>
+            <p id="modalDescription"></p>
+            <button class="btn btn-primary" onclick="closeManifestation()" style="width: 100%;">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Food Section -->
+    <section class="food-section" id="food">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Gastronomia</span>
+                <h2 class="section-title">Sabores do Brasil</h2>
+                <p class="section-subtitle">A culinária brasileira é um reflexo da nossa diversidade cultural. Cada região, comunidade e tradição trouxe seus sabores, ingredientes e técnicas para formar a gastronomia que conhecemos hoje.</p>
+            </div>
+            <div class="food-grid">
+                <div class="food-card fade-in">
+                    <div class="food-card-image" style="background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);">
+                        🍲
+                    </div>
+                    <div class="food-card-body">
+                        <span class="food-origin">Nordeste</span>
+                        <h3>Acarajé</h3>
+                        <p>Bolho de feijão fradinho frito, recheado com vatapá, caruru, camarão e outros ingredientes. Tem origem na cultura afro-brasileira e é um dos alimentos mais tradicionais do Brasil.</p>
+                    </div>
+                </div>
+
+                <div class="food-card fade-in">
+                    <div class="food-card-image" style="background: linear-gradient(135deg, #2A9D8F 0%, #457B9D 100%);">
+                        🐟
+                    </div>
+                    <div class="food-card-body">
+                        <span class="food-origin">Regiões Norte e Ribeirinhas</span>
+                        <h3>Peixe na Panela</h3>
+                        <p>Prato tradicional das comunidades ribeirinhas, feito com peixes frescos dos rios, cozidos com mandioca, banana da terra e outros ingredientes regionais.</p>
+                    </div>
+                </div>
+
+                <div class="food-card fade-in">
+                    <div class="food-card-image" style="background: linear-gradient(135deg, #009739 0%, #00B84A 100%);">
+                        🥟
+                    </div>
+                    <div class="food-card-body">
+                        <span class="food-origin">Sul</span>
+                        <h3>Chimarrão e Churrasco</h3>
+                        <p>Tradições gaúchas que vieram das culturas europeias e se adaptaram ao Brasil. O chimarrão é uma infusão de erva-mate e o churrasco é uma forma de preparo de carne que se tornou símbolo cultural.</p>
+                    </div>
+                </div>
+
+                <div class="food-card fade-in">
+                    <div class="food-card-image" style="background: linear-gradient(135deg, #E63946 0%, #9B2226 100%);">
+                        🍚
+                    </div>
+                    <div class="food-card-body">
+                        <span class="food-origin">Quilombolas</span>
+                        <h3>Caruru e Vatapá</h3>
+                        <p>Pratos de origem africana, adaptados e transformados no Brasil. O caruru é feito com quiabo e o vatapá com amendoim, ambos fundamentais na culinária afro-brasileira.</p>
+                    </div>
+                </div>
+
+                <div class="food-card fade-in">
+                    <div class="food-card-image" style="background: linear-gradient(135deg, #6B4C35 0%, #8B5A2B 100%);">
+                        🥑
+                    </div>
+                    <div class="food-card-body">
+                        <span class="food-origin">Amazônia</span>
+                        <h3>Maniçoba</h3>
+                        <p>Prato tradicional da Amazônia, feito com folhas de mandioca que são processadas para remover a toxidez. É um dos pratos mais importantes das festas e celebrações regionais.</p>
+                    </div>
+                </div>
+
+                <div class="food-card fade-in">
+                    <div class="food-card-image" style="background: linear-gradient(135deg, #457B9D 0%, #1D3557 100%);">
+                        🦐
+                    </div>
+                    <div class="food-card-body">
+                        <span class="food-origin">Litoral e Caiçaras</span>
+                        <h3>Moqueca</h3>
+                        <p>Prato de peixe cozido com tomate, cebola, coentro e outros ingredientes, em diferentes variações regionais. As comunidades caiçaras e ribeirinhas têm suas próprias versões tradicionais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section" id="why">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Reflexão</span>
+                <h2 class="section-title">Por que algumas culturas são pouco conhecidas?</h2>
+            </div>
+            <div class="why-content">
+                <p class="fade-in">
+                    É importante entender que a pouca visibilidade de certas culturas não é acidental. Existem diversos fatores históricos, sociais e econômicos que contribuem para que algumas manifestações culturais permaneçam menos conhecidas pela maioria da sociedade.
+                </p>
+                <div class="why-factors">
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">📺</div>
+                        <h4>Falta de Divulgação</h4>
+                        <p>Muitas culturas não têm acesso à mídia e aos meios de comunicação de massa, o que limita seu alcance e visibilidade.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">⚖️</div>
+                        <h4>Desigualdade Social</h4>
+                        <p>Comunidades tradicionais e periféricas muitas vezes não têm os mesmos recursos e oportunidades de divulgação que outras manifestações culturais.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">🚫</div>
+                        <h4>Preconceito</h4>
+                        <p>Certas culturas podem ser subestimadas ou desvalorizadas devido a preconceitos históricos e sociais.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">📡</div>
+                        <h4>Centralização da Mídia</h4>
+                        <p>Os meios de comunicação tendem a focar em manifestações culturais mais comerciais e mainstream, deixando outras de fora.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">📚</div>
+                        <h4>Falta de Conhecimento</h4>
+                        <p>Muitas pessoas não têm acesso a informações sobre comunidades tradicionais e suas culturas, o que gera desconhecimento.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">📜</div>
+                        <h4>Desvalorização Histórica</h4>
+                        <p>Grupos marginalizados historicamente tiveram suas contribuições e culturas menos reconhecidas na narrativa nacional.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">🏫</div>
+                        <h4>Espaço nas Escolas</h4>
+                        <p>O ensino sobre a diversidade cultural brasileira ainda é limitado em muitas escolas, com foco em uma visão mais restrita da cultura nacional.</p>
+                    </div>
+                    <div class="why-factor fade-in">
+                        <div class="why-factor-icon">📰</div>
+                        <h4>Pouco Espaço na Mídia</h4>
+                        <p>As comunidades tradicionais e suas manifestações culturais têm pouco espaço nos principais veículos de comunicação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actions Section -->
+    <section class="actions-section" id="actions">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">O que podemos fazer?</span>
+                <h2 class="section-title">Valorizando a diversidade cultural</h2>
+                <p class="section-subtitle">Cada pessoa pode contribuir para que mais culturas brasileiras sejam conhecidas, respeitadas e valorizadas. Aqui estão algumas formas de fazer parte dessa mudança.</p>
+            </div>
+            <div class="actions-grid">
+                <div class="action-card fade-in">
+                    <div class="action-icon">📖</div>
+                    <h4>Pesquisar</h4>
+                    <p>Busque informações sobre culturas brasileiras, leia livros, assista documentários e conheça histórias de diferentes comunidades.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">🏛️</div>
+                    <h4>Visitar Museus</h4>
+                    <p>Conheça museus e centros culturais que apresentam a diversidade cultural do Brasil e suas diferentes manifestações.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">🎨</div>
+                    <h4>Valorizar Artistas</h4>
+                    <p>Apoie artistas, músicos, dançarinos e produtores culturais brasileiros, especialmente aqueles de comunidades tradicionais.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">🤝</div>
+                    <h4>Conhecer Histórias</h4>
+                    <p>Ouça as histórias de pessoas de comunidades tradicionais, periféricas e diferentes regiões do Brasil.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">❤️</div>
+                    <h4>Combater Preconceitos</h4>
+                    <p>Questione estereótipos e preconceitos sobre diferentes culturas e comunidades. Promova o respeito e a inclusão.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">📢</div>
+                    <h4>Compartilhar Conhecimento</h4>
+                    <p>Compartilhe o que aprende sobre a diversidade cultural brasileira com amigos, família e nas redes sociais.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">🎉</div>
+                    <h4>Visitar Eventos</h4>
+                    <p>Participe de festas, eventos e celebrações culturais de diferentes regiões e comunidades do Brasil.</p>
+                </div>
+                <div class="action-card fade-in">
+                    <div class="action-icon">🎵</div>
+                    <h4>Ouvir Músicas</h4>
+                    <p>Explore a música de diferentes regiões e manifestações culturais brasileiras, descobrindo novos ritmos e histórias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover-section">
+        <div class="section-container">
+            <h2 class="fade-in">Descubra uma cultura</h2>
+            <p class="fade-in">Clique no botão abaixo e descubra aleatoriamente uma das culturas que formam o Brasil. Cada vez que você clicar, uma nova curiosidade aparecerá.</p>
+            <button class="discover-btn fade-in" onclick="discoverCulture()">
+                🎲 Descubra uma cultura
+            </button>
+            <div class="discover-result" id="discoverResult">
+                <h4 id="discoverTitle"></h4>
+                <p id="discoverText"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <div class="section-container">
+            <div class="counter-container fade-in">
+                <div class="counter-display">
+                    <span class="counter-icon">🌍</span>
+                    <span class="counter-number" id="counterNumber">0</span>
+                    <span class="counter-label">culturas e manifestações descobertas</span>
+                </div>
+                <button class="btn btn-outline" onclick="resetCounter()" style="padding: 0.75rem 1.5rem;">
+                    Zerar contador
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message Section -->
+    <section class="final-section" id="final">
+        <div class="final-content">
+            <div class="final-quote fade-in">
+                "Conhecer o Brasil é conhecer as <span>pessoas, histórias e culturas</span> que fazem parte dele."
+            </div>
+            <p class="final-text fade-in">
+                Nosso país é formado por diferentes povos, histórias e tradições. Valorizar essa diversidade não significa escolher uma cultura, mas reconhecer que todas elas ajudam a construir a identidade brasileira.
+            </p>
+            <div class="final-question fade-in">
+                "Que Brasil você ainda não conhece?"
+            </div>
+            <div class="final-buttons fade-in">
+                <a href="#cultures" class="btn btn-primary">
+                    Começar a explorar
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#hero" class="btn btn-secondary">
+                    Voltar ao início
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Brasil Cultural</div>
+            <p class="footer-text">
+                Um projeto para celebrar e divulgar a imensa diversidade cultural do Brasil.<br>
+                Cada cultura, cada tradição, cada história conta uma parte da nossa identidade.
+            </p>
+            <div class="footer-links">
+                <a href="#hero">Início</a>
+                <a href="#cultures">Culturas</a>
+                <a href="#featured">Em Destaque</a>
+                <a href="#manifestations">Manifestações</a>
+                <a href="#food">Sabores</a>
+                <a href="#actions">O que fazer?</a>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-bottom">
+                © 2024 Brasil Cultural — Um projeto sobre a diversidade cultural brasileira
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <script>
+        // Data for cultures
+        const culturesData = {
+            indigena: {
+                name: "Cultura Indígena",
+                icon: "🌿",
+                description: "Os povos indígenas são os primeiros habitantes do Brasil. Com milhares de anos de história, eles desenvolveram conhecimentos únicos sobre a natureza, medicina, agricultura e cosmovisão. Cada povo indígena tem sua própria língua, costumes e tradições.",
+                curiosity: "Existem mais de 300 povos indígenas no Brasil, falando mais de 270 línguas diferentes. Muitos desses povos ainda preservam seus modos de vida tradicionais e seus conhecimentos ancestrais."
+            },
+            afro: {
+                name: "Cultura Afro-Brasileira",
+                icon: "🥁",
+                description: "A cultura afro-brasileira é uma das bases da identidade nacional. Sua influência está presente na música, dança, culinária, religião, arte, linguagem e em praticamente todos os aspectos da cultura brasileira. É uma herança fundamental da formação do país.",
+                curiosity: "O samba, a capoeira, a culinária brasileira e muitas expressões da nossa língua têm raízes profundas na cultura africana. Sem a contribuição afro-brasileira, o Brasil seria completamente diferente."
+            },
+            quilombola: {
+                name: "Cultura Quilombola",
+                icon: "🏘️",
+                description: "As comunidades quilombolas são formadas por descendentes de escravizados que buscaram liberdade e formaram suas próprias comunidades. Sua importância histórica e cultural para a formação do Brasil é fundamental, e suas tradições são parte importante da nossa identidade.",
+                curiosity: "Existem mais de 2.000 comunidades quilombolas reconhecidas no Brasil hoje. Muitas dessas comunidades preservam tradições, modos de vida e saberes que são parte fundamental da história brasileira."
+            },
+            sertaneja: {
+                name: "Cultura Sertaneja",
+                icon: "🤠",
+                description: "A cultura sertaneja representa as tradições do interior do Brasil, especialmente do sertão e das regiões de planalto. Com modos de vida próprios, música, culinária e valores distintos, essa cultura é parte importante da identidade nacional.",
+                curiosity: "A música sertaneja é um dos gêneros mais ouvidos do Brasil, com raízes nas tradições do interior. As festas e tradições sertanejas são manifestações culturais ricas e diversas."
+            },
+            nordestina: {
+                name: "Cultura Nordestina",
+                icon: "☀️",
+                description: "O Nordeste do Brasil tem uma das culturas mais ricas e diversificadas do país, com fortes influências africanas, indígenas e europeias. Suas manifestações culturais, culinária, música e festas são reconhecidas em todo o Brasil.",
+                curiosity: "O Nordeste tem algumas das festas populares mais tradicionais do Brasil, como as festas de São João, que atraem milhões de pessoas. A cultura nordestina é uma das mais influentes da cultura brasileira."
+            },
+            amazonica: {
+                name: "Cultura Amazônica",
+                icon: "🌳",
+                description: "A cultura amazônica é formada por diversos povos e comunidades que vivem na maior floresta tropical do mundo. Inclui povos indígenas, comunidades ribeirinhas, extrativistas e outras, todas com modos de vida ligados à floresta e ao rio Amazonas.",
+                curiosity: "A Amazônia brasileira abriga centenas de comunidades ribeirinhas, indígenas e extrativistas. Essas comunidades possuem conhecimentos únicos sobre a floresta e seus recursos."
+            },
+            ribeirinha: {
+                name: "Cultura Ribeirinha",
+                icon: "🛶",
+                description: "As comunidades ribeirinhas vivem às margens dos rios, com modos de vida profundamente conectados à água. Sua cultura inclui pesca artesanal, construção de barcos, alimentação baseada em peixes e uma relação especial com os rios e a natureza.",
+                curiosity: "Muitas comunidades ribeirinhas têm tradições de centenas de anos, transmitidas de geração em geração. Elas desenvolveram técnicas únicas de pesca, navegação e sobrevivência nos rios."
+            },
+            caiarra: {
+                name: "Cultura Caiçara",
+                icon: "🌊",
+                description: "As comunidades caiçaras são tradicionais habitantes do litoral brasileiro. Sua cultura é marcada pela relação com o mar, pela pesca artesanal, por uma culinária única com frutos do mar e por tradições que vão além da relação com o oceano.",
+                curiosity: "Os caiçaras desenvolveram técnicas de pesca e navegação únicas ao longo de gerações. Suas comunidades são exemplos de como é possível viver em harmonia com o mar e a costa."
+            },
+            pantaneira: {
+                name: "Cultura Pantaneira",
+                icon: "🐃",
+                description: "A cultura pantaneira é formada pelas tradições das comunidades que vivem no Pantanal, o maior planalto alagável do mundo. Com modos de vida ligados ao campo, à pecuária e à natureza única desse ecossistema, essa cultura é parte importante da identidade brasileira.",
+                curiosity: "O Pantanal é um dos ecossistemas mais biodiversos do mundo e abriga comunidades com tradições únicas. A cultura pantaneira inclui modos de vida, culinária e expressões culturais próprias."
+            },
+            sulista: {
+                name: "Cultura Sulista",
+                icon: "🏔️",
+                description: "A cultura do sul do Brasil é formada por tradições de comunidades que viveram na região por gerações. Com influências europeias, indígenas e próprias das comunidades do planalto e das serras, essa cultura tem características distintas.",
+                curiosity: "O sul do Brasil tem tradições culturais distintas, como a cultura gaúcha, as comunidades de imigrantes e as tradições das regiões de planalto. Cada área tem suas próprias manifestações culturais."
+            },
+            tradicionais: {
+                name: "Comunidades Tradicionais",
+                icon: "🏡",
+                description: "O Brasil possui diversas comunidades tradicionais que preservam modos de vida ancestrais. Entre elas estão ribeirinhos, ribeirinhas, extractivistas, quilombolas, caiçaras e outras. Essas comunidades têm conhecimentos e tradições únicas.",
+                curiosity: "O Brasil reconhece oficialmente diversos tipos de comunidades tradicionais e seus direitos. Essas comunidades são fundamentais para a preservação da diversidade cultural e ambiental do país."
+            },
+            periferias: {
+                name: "Periferias e Comunidades Urbanas",
+                icon: "🏙️",
+                description: "As periferias das grandes cidades brasileiras são espaços de grande diversidade cultural. Nesses locais surgem expressões artísticas, musicais e sociais únicas, que contribuem para a identidade cultural do país.",
+                curiosity: "Muitas expressões culturais contemporâneas do Brasil, como o funk, o hip-hop e outras manifestações artísticas, nascem nas periferias. Essas culturas são parte fundamental da identidade cultural atual."
+            }
+        };
+
+        // Data for manifestations
+        const manifestationsData = {
+            maracatu: {
+                name: "Maracatu",
+                icon: "🥁",
+                region: "Nordeste (Pernambuco)",
+                description: "O Maracatu é uma manifestação cultural do Nordeste, especialmente de Pernambuco, com raízes na cultura africana e indígena. É uma expressão de dança, música e teatro que celebra a história e as tradições do povo. Os grupos de maracatu realizam desfiles com fantasias elaboradas, tambores e cantos que contam histórias da cultura negra brasileira."
+            },
+            jongo: {
+                name: "Jongo",
+                icon: "💃",
+                region: "Sul do Bahia, Espírito Santo e Rio de Janeiro",
+                description: "O Jongo é uma expressão cultural de origem africana, presente no sul da Bahia, Espírito Santo e Rio de Janeiro. Combina dança, música e poesia em um ritual que envolve o contato com o terreiro e a comunidade. É uma manifestação de resistência e preservação da cultura africana no Brasil."
+            },
+            carimbo: {
+                name: "Carimbó",
+                icon: "🪕",
+                region: "Pará (Amazônia)",
+                description: "O Carimbó é uma dança e música tradicional da região do Pará, com influências indígenas e africanas. É uma expressão cultural importante da Amazônia, caracterizada por seus ritmos marcantes e danças em pares. A cultura carimbó é parte fundamental da identidade paraense."
+            },
+            frevo: {
+                name: "Frevo",
+                icon: "🎺",
+                region: "Nordeste (Pernambuco)",
+                description: "O Frevo é um gênero musical e dança rápida típica do Nordeste, especialmente de Pernambuco. Caracterizado por sua velocidade e energia, o frevo é uma expressão cultural que surge durante as festas juninas e outros eventos. É uma das manifestações mais vibrantes da cultura nordestina."
+            },
+            bumba: {
+                name: "Bumba meu boi",
+                icon: "🐂",
+                region: "Diversas regiões do Brasil",
+                description: "O Bumba meu boi é uma festa popular presente em várias regiões do Brasil, com diferentes variações. Envolve desfiles, música, dança e teatro, contando a história de um boi que é morto e ressuscitado. É uma manifestação que combina elementos indígenas, africanos e europeus."
+            },
+            congada: {
+                name: "Congada",
+                icon: "⛪",
+                region: "Minas Gerais e outras regiões",
+                description: "A Congada é uma manifestação de matriz africana com elementos católicos, presente em várias regiões do Brasil, especialmente em Minas Gerais. Envolve procissões, danças e cantos que celebram a cultura africana e a resistência dos escravizados."
+            },
+            fandango: {
+                name: "Fandango",
+                icon: "🎸",
+                region: "Sul do Brasil",
+                description: "O Fandango é uma expressão musical e dançante de origem portuguesa, que foi adaptada e transformada no Brasil. É uma manifestação que envolve violão, canto e dança, e que se desenvolveu de formas diferentes em diversas regiões do país."
+            },
+            ciranda: {
+                name: "Ciranda",
+                icon: "🔄",
+                region: "Litoral e Nordeste",
+                description: "A Ciranda é uma dança circular tradicional, especialmente presente no litoral e no Nordeste do Brasil. É uma manifestação que envolve cantos, dança em círculo e participação coletiva. A ciranda é uma expressão da cultura popular brasileira que une comunidades."
+            },
+            catira: {
+                name: "Catira",
+                icon: "💃",
+                region: "Interior do Brasil",
+                description: "A Catira é uma dança tradicional do interior do Brasil, com raízes nas festas juninas e nas tradições sertanejas. É uma expressão cultural que envolve dança, música e trajes típicos, sendo uma das manifestações mais conhecidas das festas do interior."
+            },
+            folia: {
+                name: "Folia de Reis",
+                icon: "🎄",
+                region: "Diversas regiões do Brasil",
+                description: "A Folia de Reis é uma celebração tradicional do Natal e da Epifania, presente em diversas regiões do Brasil. Envolve cantorias, desfiles e celebrações que combinam elementos religiosos e culturais. É uma manifestação que une comunidades em torno de tradições compartilhadas."
+            }
+        };
+
+        // Counter
+        let discoveredCount = 0;
+        const counterElement = document.getElementById('counterNumber');
+
+        function updateCounter() {
+            counterElement.textContent = discoveredCount;
+        }
+
+        function incrementCounter() {
+            discoveredCount++;
+            updateCounter();
+        }
+
+        function resetCounter() {
+            discoveredCount = 0;
+            updateCounter();
+        }
+
+        // Show culture info
+        function showCultureInfo(cultureKey) {
+            const culture = culturesData[cultureKey];
+            if (!culture) return;
+
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'manifestation-modal active';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="this.parentElement.parentElement.remove()">✕</button>
+                    <h3><span class="modal-icon">${culture.icon}</span> ${culture.name}</h3>
+                    <p style="color: var(--color-text-light); line-height: 1.7; margin-bottom: 1.5rem;">${culture.description}</p>
+                    <div style="background: rgba(69, 123, 157, 0.08); padding: 1rem; border-radius: var(--radius-sm); border-left: 3px solid var(--color-accent-2); margin-bottom: 1.5rem;">
+                        <strong>Curiosidade:</strong> ${culture.curiosity}
+                    </div>
+                    <button class="btn btn-primary" onclick="this.parentElement.parentElement.remove(); incrementCounter();" style="width: 100%;">
+                        Marque como descoberta ✓
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Close on outside click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        // Open manifestation modal
+        function openManifestation(key) {
+            const manifestation = manifestationsData[key];
+            if (!manifestation) return;
+
+            const modal = document.getElementById('manifestationModal');
+            document.getElementById('modalIcon').textContent = manifestation.icon;
+            document.getElementById('modalName').textContent = manifestation.name;
+            document.getElementById('modalRegion').textContent = manifestation.region;
+            document.getElementById('modalDescription').textContent = manifestation.description;
+            modal.classList.add('active');
+            incrementCounter();
+        }
+
+        function closeManifestation() {
+            document.getElementById('manifestationModal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        document.getElementById('manifestationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeManifestation();
+            }
+        });
+
+        // Discover culture
+        function discoverCulture() {
+            const keys = Object.keys(culturesData);
+            const randomKey = keys[Math.floor(Math.random() * keys.length)];
+            const culture = culturesData[randomKey];
+
+            const resultDiv = document.getElementById('discoverResult');
+            document.getElementById('discoverTitle').textContent = `${culture.icon} ${culture.name}`;
+            document.getElementById('discoverText').textContent = culture.curiosity;
+            resultDiv.classList.add('show');
+
+            incrementCounter();
+        }
+
+        // Navigation
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const navToggle = document.getElementById('navToggle');
+            navLinks.classList.toggle('open');
+            navToggle.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const navToggle = document.getElementById('navToggle');
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('active');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .scale-in, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Initialize counter
+        updateCounter();
+    </script>
+</body>
+</html>
